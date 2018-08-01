@@ -1,1 +1,1 @@
-include ':app', ':mobsharesdk', ':JPushExample', ':vvworkertest', ':recycleviewtest'
+include ':app', ':GiftSpiritNew', ':PullRefresh_library', ':ttstest'
