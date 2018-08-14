@@ -56,6 +56,11 @@ public class PopupActivity extends AppCompatActivity {
         };
 
         initData();
+        testGit();
+    }
+
+    private void testGit() {
+        
     }
 
     //模拟一个耗时的操作。
