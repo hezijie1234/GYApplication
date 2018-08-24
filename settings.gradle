@@ -1,1 +1,1 @@
-include ':app', ':GiftSpiritNew', ':PullRefresh_library', ':ttstest'
+include ':app', ':GiftSpiritNew', ':PullRefresh_library'

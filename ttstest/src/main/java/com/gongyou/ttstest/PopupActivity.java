@@ -60,7 +60,9 @@ public class PopupActivity extends AppCompatActivity {
     }
 
     private void testGit() {
-        
+        //这是暂缓区的内容
+
+        //这是工作文件下的内容
     }
 
     //模拟一个耗时的操作。
