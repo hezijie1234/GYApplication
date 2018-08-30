@@ -1,1 +1,1 @@
-include ':app', ':GiftSpiritNew', ':PullRefresh_library', ':fingerprinttest'
+include ':app', ':GiftSpiritNew', ':PullRefresh_library', ':fingerprinttest', ':piepercentageview'
