@@ -1,1 +1,1 @@
-include ':app', ':GiftSpiritNew', ':PullRefresh_library'
+include ':app', ':GiftSpiritNew', ':PullRefresh_library', ':fingerprinttest'
