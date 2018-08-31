@@ -3,11 +3,10 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/GYApplication.iml" filepath="$PROJECT_DIR$/GYApplication.iml" />
-      <module fileurl="file://$PROJECT_DIR$/GiftSpiritNew/GiftSpiritNew.iml" filepath="$PROJECT_DIR$/GiftSpiritNew/GiftSpiritNew.iml" />
       <module fileurl="file://$PROJECT_DIR$/PullRefresh_library/PullRefresh_library.iml" filepath="$PROJECT_DIR$/PullRefresh_library/PullRefresh_library.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/fingerprinttest/fingerprinttest.iml" filepath="$PROJECT_DIR$/fingerprinttest/fingerprinttest.iml" />
       <module fileurl="file://$PROJECT_DIR$/piepercentageview/piepercentageview.iml" filepath="$PROJECT_DIR$/piepercentageview/piepercentageview.iml" />
+      <module fileurl="file://$PROJECT_DIR$/textviewspan/textviewspan.iml" filepath="$PROJECT_DIR$/textviewspan/textviewspan.iml" />
     </modules>
   </component>
 </project>

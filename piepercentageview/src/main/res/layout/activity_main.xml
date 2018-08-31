@@ -6,13 +6,20 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.gongyou.piepercentageview.MainActivity">
-
+    <TextView
+        android:id="@+id/tv_color"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:text="测试透明色"/>
     <com.gongyou.piepercentageview.PieView
         android:id="@+id/pieview"
         android:layout_width="120dp"
         android:layout_height="120dp"
        />
     <com.gongyou.piepercentageview.TestView
+        android:id="@+id/test_v"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
+
 </LinearLayout>

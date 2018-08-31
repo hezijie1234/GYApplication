@@ -4,6 +4,8 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.Rect;
+import android.graphics.RectF;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
@@ -22,8 +24,9 @@ public class TestView extends View {
 
     public TestView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
-        mPaint.setColor(Color.BLACK);
-        mPaint.setStrokeWidth(60);
+        mPaint.setColor(Color.BLUE);
+        mPaint.setAntiAlias(true);
+        mPaint.setStrokeWidth(1f);
         mPaint.setStyle(Paint.Style.STROKE);
     }
 
@@ -40,6 +43,9 @@ public class TestView extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        canvas.drawPoint(300,300,mPaint);
+//        canvas.drawLine(300,300,500,600,mPaint);
+        canvas.drawColor(Color.GRAY);
+        RectF rec = new RectF(300,300,600,600);
+        canvas.drawArc(rec,0,90,true,mPaint);
     }
 }

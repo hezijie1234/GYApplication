@@ -34,7 +34,8 @@ public class PieView extends View {
 
     public PieView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
-        mPaint.setStyle(Paint.Style.FILL);
+        mPaint.setStyle(Paint.Style.FILL_AND_STROKE);
+//        mPaint.setStrokeWidth(10f);
         mPaint.setAntiAlias(true);
     }
 
@@ -50,6 +51,16 @@ public class PieView extends View {
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+        int width = MeasureSpec.getSize(widthMeasureSpec);
+        int widthMode = MeasureSpec.getMode(widthMeasureSpec);
+        int height = MeasureSpec.getSize(heightMeasureSpec);
+        int heightMode = MeasureSpec.getMode(heightMeasureSpec);
+
+    }
+
+    @Override
+    protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
+        super.onLayout(changed, left, top, right, bottom);
     }
 
     @Override
