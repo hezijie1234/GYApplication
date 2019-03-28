@@ -47,5 +47,6 @@ public class TestView extends View {
         canvas.drawColor(Color.GRAY);
         RectF rec = new RectF(300,300,600,600);
         canvas.drawArc(rec,0,90,true,mPaint);
+
     }
 }

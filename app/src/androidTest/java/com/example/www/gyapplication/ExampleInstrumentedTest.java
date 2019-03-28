@@ -3,9 +3,13 @@ package com.example.www.gyapplication;
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
 import android.support.test.runner.AndroidJUnit4;
+import android.util.Log;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
+
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 
 import static org.junit.Assert.*;
 
@@ -20,7 +24,11 @@ public class ExampleInstrumentedTest {
     public void useAppContext() throws Exception {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
-
-        assertEquals("com.example.www.gyapplication", appContext.getPackageName());
+        String a = "2";
+        if (a.length() - a.indexOf(".") > 2){
+            a = a.substring(0,a.indexOf(".") + 3);
+        }
+        Log.e("111", "useAppContext: " + a  );
+//        assertEquals("com.example.www.gyapplication", appContext.getPackageName());
     }
 }

@@ -21,7 +21,17 @@
             android:layout_height="wrap_content"
             android:onClick="goClick"
             android:text="去Gird界面"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="click"
+            android:text="去apaterhelp界面"/>
     </LinearLayout>
+    <TextView
+        android:id="@+id/tv_test_span"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recycle_view"
         android:layout_width="match_parent"

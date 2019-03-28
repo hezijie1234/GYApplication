@@ -6,6 +6,9 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.gongyou.piepercentageview.MainActivity">
+    <com.gongyou.piepercentageview.CanvasTestView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
     <TextView
         android:id="@+id/tv_color"
         android:layout_width="wrap_content"

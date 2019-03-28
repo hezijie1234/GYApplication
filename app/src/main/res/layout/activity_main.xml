@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.example.www.gyapplication.MainActivity">
 
     <TextView
@@ -15,5 +17,53 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+    <RatingBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
 
-</android.support.constraint.ConstraintLayout>
+        android:id="@+id/ratingbar_Indicator"
+        />
+    <RatingBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="?android:attr/ratingBarStyleSmall"
+
+        android:id="@+id/ratingbar_Small"
+        android:numStars="20"
+        />
+    <RatingBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/myratingbar"
+        android:stepSize="1"
+        android:rating="5"
+        android:id="@+id/ratingbar_default"
+        />
+
+    <android.support.v7.widget.AppCompatRatingBar
+        android:id="@+id/rb"
+        style="?attr/ratingBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dip"
+        android:progressBackgroundTint="#ffffff"
+        android:progressTint="#f9d51a"
+        android:rating="5"
+        android:secondaryProgressTint="#ffffff"
+        android:stepSize="1" />
+
+    <android.support.v7.widget.AppCompatRatingBar
+        android:id="@+id/rating_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="?attr/ratingBarStyleIndicator"
+        android:isIndicator="false"
+        android:background="#ffffff"
+        android:theme="@style/RatingBar"
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="数字键盘"
+        android:inputType="number"/>
+</LinearLayout>

@@ -1,6 +1,7 @@
 package com.gongyou.recycleviewtest;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -9,14 +10,26 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
+import android.text.SpannableStringBuilder;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.chad.library.adapter.base.entity.MultiItemEntity;
+import com.gongyou.SpannableStringUtils;
+import com.gongyou.VoiceSpeaker;
+import com.gongyou.VoiceTemplate;
+import com.gongyou.rvadapterhelp.AnimationUseActivity;
+import com.gongyou.rvadapterhelp.MultiItemActivity;
+
 import java.util.ArrayList;
 import java.util.List;
+
+import static android.text.Layout.Alignment.ALIGN_CENTER;
+import static android.text.Spanned.SPAN_INCLUSIVE_EXCLUSIVE;
+
 /**
  * @author hezijie
  * @create 2018/5/30
@@ -75,6 +88,20 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, "被长按了" + position, Toast.LENGTH_SHORT).show();
             }
         });
+        testSpan();
+    }
+
+    private void testSpan() {
+        TextView tvTestSpan = findViewById(R.id.tv_test_span);
+        tvTestSpan.setText(SpannableStringUtils
+                .getBuilder("hezijie\n欢迎来到得来联盟召唤师")
+                .append("\n请开始第一句比赛")
+                .append("\n你可以先去试炼一下")
+                .setAlign(ALIGN_CENTER)
+                .setForegroundColor(Color.RED)
+                .setBackgroundColor(Color.GREEN)
+                .setDrawable(getResources().getDrawable(R.drawable.dot))
+                .create());
     }
 
     private ArrayList<String> getData() {
@@ -88,12 +115,23 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClick(View view) {
-        data.remove(0);
-        bookBaseAdapter.notifyItemRemoved(0);
+//        data.remove(0);
+//        bookBaseAdapter.notifyItemRemoved(0);
+        final List<String> list = new VoiceTemplate()
+                .prefix("new")
+//                .numString("15.00")
+//                .suffix("yuan")
+                .gen();
+
+        VoiceSpeaker.getInstance().speak(list);
     }
 
     public void goClick(View view) {
         startActivity(new Intent(this,GridLayoutActivity.class));
+    }
+
+    public void click(View view) {
+        startActivity(new Intent(this, MultiItemActivity.class));
     }
 
 
