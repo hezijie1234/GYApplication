@@ -23,7 +23,8 @@
 
         <service android:name=".AlarmService" />
 
-        <activity android:name=".eventbus.demo.EventbusActivity"></activity>
+        <activity android:name=".eventbus.demo.EventbusActivity" />
+        <activity android:name=".viewstub_demo.ViewStubActivity"></activity>
     </application>
 
 </manifest>

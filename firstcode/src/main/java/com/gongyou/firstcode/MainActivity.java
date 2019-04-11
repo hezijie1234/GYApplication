@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.gongyou.firstcode.eventbus.demo.EventbusActivity;
 import com.gongyou.firstcode.eventbus.demo.MessageEvent;
+import com.gongyou.firstcode.viewstub_demo.ViewStubActivity;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -57,5 +58,9 @@ public class MainActivity extends AppCompatActivity {
     @Subscribe(threadMode = ThreadMode.MAIN,sticky = false)
     public void onEventMessage(MessageEvent event){
         Log.e("111", "onEventMessage: " + event.getCode() );
+    }
+
+    public void viewStubTest(View view) {
+        startActivity(new Intent(this, ViewStubActivity.class));
     }
 }

@@ -26,6 +26,13 @@
                 android:paddingBottom="10dp"
                 android:text="eventbus测试"
                 android:onClick="eventBusTest" />
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:text="ViewStub测试"
+                android:onClick="viewStubTest" />
         </LinearLayout>
     </ScrollView>
 
