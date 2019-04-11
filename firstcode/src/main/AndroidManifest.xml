@@ -19,9 +19,11 @@
         <activity
             android:name=".SingleTaskActvitiy"
             android:launchMode="singleTask" />
-        <activity android:name=".AlarmActivity"></activity>
+        <activity android:name=".AlarmActivity" />
 
         <service android:name=".AlarmService" />
+
+        <activity android:name=".eventbus.demo.EventbusActivity"></activity>
     </application>
 
 </manifest>

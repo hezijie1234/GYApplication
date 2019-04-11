@@ -1,10 +1,19 @@
 package com.gongyou.firstcode;
 
 import android.content.Intent;
+import android.support.annotation.MainThread;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
+
+import com.gongyou.firstcode.eventbus.demo.EventbusActivity;
+import com.gongyou.firstcode.eventbus.demo.MessageEvent;
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,6 +24,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        EventBus.getDefault().register(this);
+        EventBus.getDefault().postSticky(new MessageEvent<>(MessageEvent.EventCode.B));
     }
 
     public void intentClick(View view) {
@@ -33,5 +44,18 @@ public class MainActivity extends AppCompatActivity {
         authorList.add(new Author("曾凡人",30));
         person.setmData(authorList);
         startActivity(new Intent(this,SingleTaskActvitiy.class).putExtra("data",person));
+    }
+
+    /**
+     * 进入eventbus测试页面
+     * @param view
+     */
+    public void eventBusTest(View view) {
+        startActivity(new Intent(this, EventbusActivity.class));
+    }
+
+    @Subscribe(threadMode = ThreadMode.MAIN,sticky = false)
+    public void onEventMessage(MessageEvent event){
+        Log.e("111", "onEventMessage: " + event.getCode() );
     }
 }

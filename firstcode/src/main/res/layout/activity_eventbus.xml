@@ -6,20 +6,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.gongyou.firstcode.SingleTaskActvitiy">
+    tools:context="com.gongyou.firstcode.eventbus.demo.EventbusActivity">
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="sendMessage"
+        android:text="发布一个消息"/>
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="点击跳转"
-        android:onClick="intentClick"/>
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="点击测试定时任务"
-        android:onClick="alarmClick"/>
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="获取粘性时间"
+        android:text="接受一个粘性消息"
         android:onClick="receiverStickMessage"/>
 </LinearLayout>
