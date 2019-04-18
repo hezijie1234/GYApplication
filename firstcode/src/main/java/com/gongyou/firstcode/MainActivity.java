@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
+import com.gongyou.firstcode.cachedir.demo.CacheDirActivity;
 import com.gongyou.firstcode.eventbus.demo.EventbusActivity;
 import com.gongyou.firstcode.eventbus.demo.MessageEvent;
 import com.gongyou.firstcode.viewstub_demo.ViewStubActivity;
@@ -62,5 +63,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void viewStubTest(View view) {
         startActivity(new Intent(this, ViewStubActivity.class));
+    }
+
+    public void fileMemTest(View view) {
+        startActivity(new Intent(this, CacheDirActivity.class));
     }
 }
