@@ -11,6 +11,7 @@ import android.widget.TextView;
 import com.gongyou.firstcode.cachedir.demo.CacheDirActivity;
 import com.gongyou.firstcode.eventbus.demo.EventbusActivity;
 import com.gongyou.firstcode.eventbus.demo.MessageEvent;
+import com.gongyou.firstcode.rxjava.demo.RxjavaStudyActivity;
 import com.gongyou.firstcode.viewstub_demo.ViewStubActivity;
 
 import org.greenrobot.eventbus.EventBus;
@@ -67,5 +68,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void fileMemTest(View view) {
         startActivity(new Intent(this, CacheDirActivity.class));
+    }
+
+    public void rxjavaText(View view) {
+        startActivity(new Intent(this, RxjavaStudyActivity.class));
     }
 }

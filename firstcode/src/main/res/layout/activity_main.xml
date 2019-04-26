@@ -40,6 +40,13 @@
                 android:paddingBottom="10dp"
                 android:text="文件存储测试"
                 android:onClick="fileMemTest" />
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:text="rxjava测试"
+                android:onClick="rxjavaText" />
         </LinearLayout>
     </ScrollView>
 
