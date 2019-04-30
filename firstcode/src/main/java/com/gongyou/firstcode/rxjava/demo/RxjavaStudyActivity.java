@@ -17,6 +17,7 @@ import com.jakewharton.rxbinding2.view.RxView;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -628,6 +629,61 @@ public class RxjavaStudyActivity extends AppCompatActivity {
             @Override
             public void onError(Throwable e) {
 
+            }
+
+            @Override
+            public void onComplete() {
+
+            }
+        });
+    }
+    private int maxConnectCount = 10;
+    private int currentConnectCount;
+    private int waitTime;
+    public void netErrorRepeat(View view) {
+        Retrofit retrofit = new Retrofit.Builder()
+                .addConverterFactory(GsonConverterFactory.create())
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+                .baseUrl("http://fy.iciba.com/")
+                .build();
+        RequestInterface requestInterface = retrofit.create(RequestInterface.class);
+        Observable<Translations> observable = requestInterface.getCall();
+        observable.retryWhen(new Function<Observable<Throwable>, ObservableSource<?>>() {
+            @Override
+            public ObservableSource<?> apply(Observable<Throwable> throwableObservable) throws Exception {
+                return throwableObservable.flatMap(new Function<Throwable, ObservableSource<?>>() {
+                    @Override
+                    public ObservableSource<?> apply(Throwable throwable) throws Exception {
+                        if (throwable instanceof IOException){
+                            if (currentConnectCount < maxConnectCount){
+                                currentConnectCount++;
+                                Log.e(TAG, "apply: 重试次数" + currentConnectCount );
+                                waitTime = 1000 + currentConnectCount* 1000;
+                                return Observable.just(1).delay(waitTime,TimeUnit.MILLISECONDS);
+                            }else {
+                                return Observable.error(new Throwable("重连次数已超过" + currentConnectCount));
+                            }
+                        }else {
+                            return Observable.error(new Throwable("发生非网络错误"));
+                        }
+
+                    }
+                });
+            }
+        }).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(new Observer<Translations>() {
+            @Override
+            public void onSubscribe(Disposable d) {
+
+            }
+
+            @Override
+            public void onNext(Translations translations) {
+                Log.e(TAG, "onNext: " + translations );
+            }
+
+            @Override
+            public void onError(Throwable e) {
+                Log.e(TAG, "onError: " + e.getMessage() );
             }
 
             @Override

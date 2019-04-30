@@ -86,4 +86,10 @@
             android:layout_height="wrap_content"
             android:text="点击按钮进行网络请求"/>
     </LinearLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="netErrorRepeat"
+        android:text="RxJava网络请求错误重连" />
 </LinearLayout>
