@@ -11,6 +11,7 @@ import com.gongyou.firstcode.R;
 import com.gongyou.firstcode.cachedir.demo.RequestInterface;
 import com.gongyou.firstcode.cachedir.demo.Translations;
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
+import com.jakewharton.rxbinding2.view.RxView;
 
 
 import org.reactivestreams.Subscriber;
@@ -602,6 +603,31 @@ public class RxjavaStudyActivity extends AppCompatActivity {
 
                 Log.e(TAG, "onError: " + e.getMessage() );
                 e.printStackTrace();
+            }
+
+            @Override
+            public void onComplete() {
+
+            }
+        });
+    }
+
+    public void controllClick(View view) {
+        Button button = findViewById(R.id.request);
+        RxView.clicks(button).throttleFirst(2,TimeUnit.SECONDS).subscribe(new Observer<Object>() {
+            @Override
+            public void onSubscribe(Disposable d) {
+
+            }
+
+            @Override
+            public void onNext(Object o) {
+                Log.e(TAG, "onNext: 按钮被点击" );
+            }
+
+            @Override
+            public void onError(Throwable e) {
+
             }
 
             @Override

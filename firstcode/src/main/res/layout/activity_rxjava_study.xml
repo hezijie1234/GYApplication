@@ -1,63 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent"
-    android:orientation="vertical"
-    >
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="baseStudy"
-        android:text="这是rxjava的简单测试"/>
+        android:text="这是rxjava的简单测试" />
+
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="baseChain"
-        android:text="RxJava基于事件流的链式调用"/>
+        android:text="RxJava基于事件流的链式调用" />
+
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="convertOperation"
-        android:text="RxJava转换操作符"/>
+        android:text="RxJava转换操作符" />
+
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="concatOperation"
-        android:text="RxJava组合合并操作符"/>
+        android:text="RxJava组合合并操作符" />
+
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="filterOperation"
-        android:text="RxJava过滤操作符"/>
+        android:text="RxJava过滤操作符" />
+
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="convertThread"
-        android:text="RxJava结合retrofit进行线程切换"/>
+        android:text="RxJava结合retrofit进行线程切换" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="backpressureBase"
-        android:text="RxJava背压测试基础"/>
+        android:text="RxJava背压测试基础" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
+
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="backpressureTest"
-            android:text="RxJava异步背压测试"/>
+            android:text="RxJava异步背压测试" />
+
         <Button
             android:id="@+id/btn"
             android:layout_width="wrap_content"
-            android:text="背压按钮"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:text="背压按钮" />
     </LinearLayout>
+
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="pollingDemo"
-        android:text="RxJava网络请求轮询"/>
+        android:text="RxJava网络请求轮询" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="controllClick"
+            android:text="RxJava功能防抖" />
+        <Button
+            android:id="@+id/request"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="点击按钮进行网络请求"/>
+    </LinearLayout>
 </LinearLayout>
