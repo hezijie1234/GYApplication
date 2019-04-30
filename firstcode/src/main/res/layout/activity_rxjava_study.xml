@@ -55,5 +55,9 @@
             android:text="背压按钮"
             android:layout_height="wrap_content" />
     </LinearLayout>
-
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="pollingDemo"
+        android:text="RxJava网络请求轮询"/>
 </LinearLayout>

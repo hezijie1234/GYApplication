@@ -563,4 +563,51 @@ public class RxjavaStudyActivity extends AppCompatActivity {
             }
         });
     }
+    private int count = 0;
+    public void pollingDemo(View view) {
+        Retrofit retrofit = new Retrofit.Builder()
+                .addConverterFactory(GsonConverterFactory.create())
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+                .baseUrl("http://fy.iciba.com/")
+                .build();
+        RequestInterface requestInterface = retrofit.create(RequestInterface.class);
+        Observable<Translations> observable = requestInterface.getCall();
+        observable.repeatWhen(new Function<Observable<Object>, ObservableSource<?>>() {
+            @Override
+            public ObservableSource<?> apply(Observable<Object> objectObservable) throws Exception {
+                return objectObservable.flatMap(new Function<Object, ObservableSource<?>>() {
+                    @Override
+                    public ObservableSource<?> apply(Object o) throws Exception {
+                        if (count < 3){
+                            return Observable.just(1).delay(2,TimeUnit.MILLISECONDS);
+                        }
+                        return Observable.error(new Throwable("轮询结束"));
+                    }
+                });
+            }
+        }).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(new Observer<Translations>() {
+            @Override
+            public void onSubscribe(Disposable d) {
+
+            }
+
+            @Override
+            public void onNext(Translations translations) {
+                count++;
+                Log.e(TAG, "onNext: " + translations );
+            }
+
+            @Override
+            public void onError(Throwable e) {
+
+                Log.e(TAG, "onError: " + e.getMessage() );
+                e.printStackTrace();
+            }
+
+            @Override
+            public void onComplete() {
+
+            }
+        });
+    }
 }
