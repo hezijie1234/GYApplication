@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.gongyou.firstcode">
-    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -25,8 +27,9 @@
 
         <activity android:name=".eventbus.demo.EventbusActivity" />
         <activity android:name=".viewstub_demo.ViewStubActivity" />
-        <activity android:name=".cachedir.demo.CacheDirActivity"></activity>
+        <activity android:name=".cachedir.demo.CacheDirActivity" />
         <activity android:name=".rxjava.demo.RxjavaStudyActivity" />
+        <activity android:name=".status.bar.StatusBarTestActivity"></activity>
     </application>
 
 </manifest>

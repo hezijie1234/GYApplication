@@ -692,4 +692,8 @@ public class RxjavaStudyActivity extends AppCompatActivity {
             }
         });
     }
+
+    public void judgment(View view) {
+
+    }
 }

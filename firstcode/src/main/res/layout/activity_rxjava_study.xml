@@ -92,4 +92,9 @@
         android:layout_height="wrap_content"
         android:onClick="netErrorRepeat"
         android:text="RxJava网络请求错误重连" />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="judgment"
+        android:text="RxJava联合判断" />
 </LinearLayout>
