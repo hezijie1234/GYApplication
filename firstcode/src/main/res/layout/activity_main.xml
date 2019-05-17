@@ -54,6 +54,13 @@
                 android:paddingBottom="10dp"
                 android:text="沉浸式状态栏测试"
                 android:onClick="statusBarTest" />
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:text="新控件contraintlayout属性"
+                android:onClick="constraintTest" />
         </LinearLayout>
     </ScrollView>
 

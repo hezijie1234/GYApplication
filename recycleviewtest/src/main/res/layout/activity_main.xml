@@ -27,6 +27,16 @@
             android:onClick="click"
             android:text="去apaterhelp界面"/>
     </LinearLayout>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="linearClick"
+        android:text="去linearLayout界面"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="staggeredClick"
+        android:text="去staggeredLayout界面"/>
     <TextView
         android:id="@+id/tv_test_span"
         android:layout_width="wrap_content"

@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.gongyou.firstcode.cachedir.demo.CacheDirActivity;
+import com.gongyou.firstcode.contraintlayout.demo.ConstraintLayoutDemoActivity;
 import com.gongyou.firstcode.eventbus.demo.EventbusActivity;
 import com.gongyou.firstcode.eventbus.demo.MessageEvent;
 import com.gongyou.firstcode.rxjava.demo.RxjavaStudyActivity;
@@ -77,5 +78,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void statusBarTest(View view) {
         startActivity(new Intent(this, StatusBarTestActivity.class));
+    }
+
+    public void constraintTest(View view) {
+        startActivity(new Intent(this, ConstraintLayoutDemoActivity.class));
     }
 }

@@ -134,6 +134,14 @@ public class MainActivity extends AppCompatActivity {
         startActivity(new Intent(this, MultiItemActivity.class));
     }
 
+    public void linearClick(View view) {
+        startActivity(new Intent(this,LinearLayoutActivity.class));
+    }
+
+    public void staggeredClick(View view) {
+        startActivity(new Intent(this,StaggeredGridActivity.class));
+    }
+
 
     static class BookBaseAdapter extends RecyclerView.Adapter<BookBaseAdapter.ViewHolder>{
         private List<String> mData;

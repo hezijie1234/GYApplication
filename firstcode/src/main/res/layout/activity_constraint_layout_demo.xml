@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.gongyou.firstcode.contraintlayout.demo.ConstraintLayoutDemoActivity">
+    <TextView
+        android:id="@+id/tv1"
+        android:layout_width="0dp"
+        app:layout_constraintHorizontal_weight="1"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/tv2"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        android:background="#4a90e2"
+        android:text="文字一"/>
+
+    <TextView
+        android:id="@+id/tv2"
+        android:layout_width="0dp"
+        app:layout_constraintHorizontal_weight="1"
+        android:layout_height="wrap_content"
+        android:background="#f2f2f2"
+        app:layout_constraintLeft_toRightOf="@+id/tv1"
+        app:layout_constraintRight_toLeftOf="@+id/tv3"
+        android:text="文字二"
+
+         />
+    <TextView
+        android:id="@+id/tv3"
+        android:layout_width="0dp"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/tv2"
+        android:layout_height="wrap_content"
+        android:background="#f2f2f2"
+
+        android:text="文字三"/>
+    <android.support.constraint.Group
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        app:constraint_referenced_ids="tv1,tv2"/>
+    <android.support.constraint.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5"/>
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+</android.support.constraint.ConstraintLayout>

@@ -1,6 +1,9 @@
 package com.gongyou.recycleviewtest;
 
+import android.graphics.Color;
+import android.os.Handler;
 import android.support.annotation.NonNull;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -21,13 +24,15 @@ public class GridLayoutActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private GridLayoutActivity.BookBaseAdapter bookBaseAdapter;
     private ArrayList<String> data;
+    private SwipeRefreshLayout srLayout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_grid_layout);
         recyclerView = findViewById(R.id.recycle_view);
+        srLayout = findViewById(R.id.sl);
         //false 表示正序排列，true表示倒叙显示
-        recyclerView.setLayoutManager(new GridLayoutManager(this,4, OrientationHelper.VERTICAL,true));
+        recyclerView.setLayoutManager(new GridLayoutManager(this,4, OrientationHelper.VERTICAL,false));
         bookBaseAdapter = new GridLayoutActivity.BookBaseAdapter(getData());
         recyclerView.setAdapter(bookBaseAdapter);
 //        recyclerView.addItemDecoration(new MyDividerItemDecoration(this,LinearLayoutManager.VERTICAL));
@@ -46,6 +51,35 @@ public class GridLayoutActivity extends AppCompatActivity {
                 Toast.makeText(GridLayoutActivity.this, "被长按了" + position, Toast.LENGTH_SHORT).show();
             }
         });
+
+        // 设置下拉出现小圆圈是否是缩放出现，出现的位置，最大的下拉位置
+        srLayout.setProgressViewOffset(true, 50, 200);
+
+        // 设置下拉圆圈的大小，两个值 LARGE， DEFAULT
+        srLayout.setSize(SwipeRefreshLayout.LARGE);
+
+        // 设置下拉圆圈上的颜色，蓝色、绿色、橙色、红色
+        srLayout.setColorSchemeResources(
+                android.R.color.holo_blue_bright,
+                android.R.color.holo_green_light,
+                android.R.color.holo_orange_light,
+                android.R.color.holo_red_light);
+
+        // 通过 setEnabled(false) 禁用下拉刷新
+        srLayout.setEnabled(true);
+        srLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+
+            }
+        });
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                srLayout.setRefreshing(false);
+            }
+        }, 5000);
+
     }
 
     private ArrayList<String> getData() {

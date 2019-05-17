@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.gongyou.recycleviewtest">
-
+    <uses-permission android:name="android.permission.INTERNET"/>
     <application
         android:name="com.gongyou.MyApp"
         android:allowBackup="true"
@@ -19,7 +19,9 @@
         </activity>
         <activity android:name=".GridLayoutActivity" />
         <activity android:name="com.gongyou.rvadapterhelp.AnimationUseActivity" />
-        <activity android:name="com.gongyou.rvadapterhelp.MultiItemActivity"></activity>
+        <activity android:name="com.gongyou.rvadapterhelp.MultiItemActivity" />
+        <activity android:name=".LinearLayoutActivity" />
+        <activity android:name=".StaggeredGridActivity"></activity>
     </application>
 
 </manifest>
