@@ -17,4 +17,9 @@
         android:layout_height="wrap_content"
         android:text="接受一个粘性消息"
         android:onClick="receiverStickMessage"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="跳转到下一个界面"
+        android:onClick="startToNext"/>
 </LinearLayout>

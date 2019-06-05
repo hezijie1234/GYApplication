@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         EventBus.getDefault().register(this);
-        EventBus.getDefault().postSticky(new MessageEvent<>(MessageEvent.EventCode.B));
+//        EventBus.getDefault().postSticky(new MessageEvent<>(MessageEvent.EventCode.B));
     }
 
     public void intentClick(View view) {
@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Subscribe(threadMode = ThreadMode.MAIN,sticky = false)
     public void onEventMessage(MessageEvent event){
-        Log.e("111", "onEventMessage: " + event.getCode() );
+        Log.e("111", "MainActivity: " + event.getCode() );
     }
 
     public void viewStubTest(View view) {

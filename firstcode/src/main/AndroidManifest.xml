@@ -30,7 +30,8 @@
         <activity android:name=".cachedir.demo.CacheDirActivity" />
         <activity android:name=".rxjava.demo.RxjavaStudyActivity" />
         <activity android:name=".status.bar.StatusBarTestActivity" />
-        <activity android:name=".contraintlayout.demo.ConstraintLayoutDemoActivity"></activity>
+        <activity android:name=".contraintlayout.demo.ConstraintLayoutDemoActivity" />
+        <activity android:name=".EventbusActivity2"></activity>
     </application>
 
 </manifest>

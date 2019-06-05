@@ -8,6 +8,9 @@ import android.util.Log;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+import java.lang.ref.ReferenceQueue;
+import java.lang.ref.SoftReference;
+import java.lang.ref.WeakReference;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 
@@ -30,5 +33,35 @@ public class ExampleInstrumentedTest {
         }
         Log.e("111", "useAppContext: " + a  );
 //        assertEquals("com.example.www.gyapplication", appContext.getPackageName());
+    }
+
+    @Test
+    public void testWeakReference() throws InterruptedException {
+        ReferenceQueue<Object> referenceQueue = new ReferenceQueue<>();
+        Object object = new Object();
+        WeakReference weakReference = new WeakReference(object,referenceQueue);
+        Log.e("111", "weakReference: " + weakReference.get() );
+        Log.e("111", "referenceQueue: " + referenceQueue.poll() );
+        object = null;
+        System.gc();
+        System.gc();
+        Log.e("111", "weakReference: " + weakReference.get() );
+        //如果弱引用所引用的对象被垃圾回收，Java 虚拟机就会把这个弱引用加入到与之关联的引用队列中。referenceQueue.poll()拉取队列中的第一个对象
+        Log.e("111", "referenceQueue: " + referenceQueue.poll() );
+
+    }
+    @Test
+    public void testSoftReference()throws InterruptedException{
+        ReferenceQueue<Object> referenceQueue = new ReferenceQueue<>();
+        Object object = new Object();
+        SoftReference weakReference = new SoftReference(object,referenceQueue);
+        Log.e("111", "weakReference: " + weakReference.get() );
+        Log.e("111", "referenceQueue: " + referenceQueue.poll() );
+        object = null;
+        System.gc();
+        System.gc();
+        Log.e("111", "weakReference: " + weakReference.get() );
+        //如果弱引用所引用的对象被垃圾回收，Java 虚拟机就会把这个弱引用加入到与之关联的引用队列中。referenceQueue.poll()拉取队列中的第一个对象
+        Log.e("111", "referenceQueue: " + referenceQueue.poll() );
     }
 }

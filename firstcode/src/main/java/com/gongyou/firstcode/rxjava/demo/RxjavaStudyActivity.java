@@ -1,6 +1,7 @@
 package com.gongyou.firstcode.rxjava.demo;
 
 import android.os.Bundle;
+import android.os.Message;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -10,6 +11,7 @@ import android.widget.Button;
 import com.gongyou.firstcode.R;
 import com.gongyou.firstcode.cachedir.demo.RequestInterface;
 import com.gongyou.firstcode.cachedir.demo.Translations;
+import com.gongyou.firstcode.eventbus.demo.MessageEvent;
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import com.jakewharton.rxbinding2.view.RxView;
 
@@ -52,7 +54,9 @@ public class RxjavaStudyActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rxjava_study);
+
     }
+
 
     public void baseStudy(View view) {
         Observable<Integer> observable = Observable.create(new ObservableOnSubscribe<Integer>() {
@@ -393,6 +397,9 @@ public class RxjavaStudyActivity extends AppCompatActivity {
         RequestInterface requestInterface = retrofit.create(RequestInterface.class);
         Observable<Translations> observable = requestInterface.getCall();
         observable.subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(new Observer<Translations>() {
+
+
+
             @Override
             public void onSubscribe(Disposable d) {
 

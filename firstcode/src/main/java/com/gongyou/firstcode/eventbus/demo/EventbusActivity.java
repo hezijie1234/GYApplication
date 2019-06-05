@@ -1,5 +1,6 @@
 package com.gongyou.firstcode.eventbus.demo;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -7,6 +8,7 @@ import android.view.View;
 import android.view.ViewStub;
 
 import com.gongyou.firstcode.BaseActivity;
+import com.gongyou.firstcode.EventbusActivity2;
 import com.gongyou.firstcode.R;
 
 import org.greenrobot.eventbus.EventBus;
@@ -15,6 +17,9 @@ import org.greenrobot.eventbus.ThreadMode;
 
 import static com.gongyou.firstcode.eventbus.demo.MessageEvent.EventCode.A;
 
+/**
+ * 参考：https://juejin.im/post/5a1bfe63f265da432e5bbc24
+ */
 public class EventbusActivity extends BaseActivity {
 
     @Override
@@ -25,7 +30,8 @@ public class EventbusActivity extends BaseActivity {
 
 
     public void sendMessage(View view) {
-        EventBus.getDefault().post(new MessageEvent<>(A));
+        //发送的粘性事件可以被stick = false的接受方法收到。
+        EventBus.getDefault().postSticky(new MessageEvent<>(A));
     }
 
     public void receiverStickMessage(View view) {
@@ -33,9 +39,13 @@ public class EventbusActivity extends BaseActivity {
     }
 
 
-    @Subscribe(threadMode = ThreadMode.MAIN,sticky = true)
-    public void onEventMessage(MessageEvent messageEvent){
-//        EventBus.getDefault().removeStickyEvent(messageEvent);
-        Log.e("111", "onEventMessage: " + messageEvent.getCode() );
+    @Subscribe(threadMode = ThreadMode.MAIN, sticky = true)
+    public void onEventMessage(MessageEvent messageEvent) {
+        Log.e("111", "EventbusActivity: " + messageEvent.getCode());
+        EventBus.getDefault().removeStickyEvent(messageEvent);
+    }
+
+    public void startToNext(View view) {
+        startActivity(new Intent(this, EventbusActivity2.class));
     }
 }
