@@ -1,0 +1,40 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/background_color">
+
+    <RelativeLayout
+        android:id="@+id/layout_video"
+        android:layout_width="fill_parent"
+        android:layout_height="200.0dip">
+
+        <net.babelstar.common.play.VideoView
+            android:id="@+id/imageView1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="200.0dip"
+        android:layout_below="@id/layout_video">
+
+        <Button
+            android:id="@+id/btnStart"
+            android:layout_width="90.0dip"
+            android:layout_height="40.0dip"
+            android:singleLine="true"
+            android:text="Start"
+            android:textSize="18.0sp" />
+
+        <Button
+            android:id="@+id/btnStop"
+            android:layout_width="90.0dip"
+            android:layout_height="40.0dip"
+            android:layout_toRightOf="@id/btnStart"
+            android:singleLine="true"
+            android:text="Stop"
+            android:textSize="18.0sp" />
+    </RelativeLayout>
+</RelativeLayout>
