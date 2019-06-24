@@ -42,6 +42,7 @@ public class MainActivity extends Activity {
 	private RealPlay mRealPlay2;
 	private Talkback mTalkback;
 	private String mServer;
+
 	private String mDevIdno;
 	
 	private Monitor mMonitor;
