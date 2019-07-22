@@ -12,28 +12,20 @@ public class Author implements Parcelable{
     private String name;
     private int age;
 
-    @Override
-    public String toString() {
-        return "Author{" +
-                "name='" + name + '\'' +
-                ", age=" + age +
-                '}';
+    public String getName() {
+        return name;
     }
 
-    public Author(String name, int age) {
+    public void setName(String name) {
         this.name = name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
         this.age = age;
-    }
-
-    protected Author(Parcel in) {
-        name = in.readString();
-        age = in.readInt();
-    }
-
-    @Override
-    public void writeToParcel(Parcel dest, int flags) {
-        dest.writeString(name);
-        dest.writeInt(age);
     }
 
     @Override
@@ -41,10 +33,24 @@ public class Author implements Parcelable{
         return 0;
     }
 
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(this.name);
+        dest.writeInt(this.age);
+    }
+
+    public Author() {
+    }
+
+    protected Author(Parcel in) {
+        this.name = in.readString();
+        this.age = in.readInt();
+    }
+
     public static final Creator<Author> CREATOR = new Creator<Author>() {
         @Override
-        public Author createFromParcel(Parcel in) {
-            return new Author(in);
+        public Author createFromParcel(Parcel source) {
+            return new Author(source);
         }
 
         @Override

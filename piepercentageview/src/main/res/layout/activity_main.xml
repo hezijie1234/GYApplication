@@ -6,23 +6,43 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.gongyou.piepercentageview.MainActivity">
-    <com.gongyou.piepercentageview.CanvasTestView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-    <TextView
-        android:id="@+id/tv_color"
+    <com.gongyou.piepercentageview.MyViewGroup
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="18sp"
-        android:text="测试透明色"/>
-    <com.gongyou.piepercentageview.PieView
-        android:id="@+id/pieview"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-       />
-    <com.gongyou.piepercentageview.TestView
-        android:id="@+id/test_v"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="奥斯特洛夫斯基"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="等待G20峰会的到来，开创中国经济的新时代"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="奥斯"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="奥斯特洛夫斯基，钢铁是怎么炼成的呢，是火炼的"/>
+    </com.gongyou.piepercentageview.MyViewGroup>
+    <!--<com.gongyou.piepercentageview.CanvasTestView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent" />-->
+    <!--<TextView-->
+        <!--android:id="@+id/tv_color"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:textSize="18sp"-->
+        <!--android:text="测试透明色"/>-->
+    <!--<com.gongyou.piepercentageview.PieView-->
+        <!--android:id="@+id/pieview"-->
+        <!--android:layout_width="120dp"-->
+        <!--android:layout_height="120dp"-->
+       <!--/>-->
+    <!--<com.gongyou.piepercentageview.TestView-->
+        <!--android:id="@+id/test_v"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content" />-->
 
 </LinearLayout>

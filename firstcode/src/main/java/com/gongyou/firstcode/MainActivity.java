@@ -49,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
         authorList.add(new Author("曾凡人",30));
         person.setmData(authorList);
         startActivity(new Intent(this,SingleTaskActvitiy.class).putExtra("data",person));
+
     }
 
     /**
