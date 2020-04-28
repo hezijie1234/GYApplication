@@ -142,6 +142,10 @@ public class MainActivity extends AppCompatActivity {
         startActivity(new Intent(this,StaggeredGridActivity.class));
     }
 
+    public void twoListClick(View view) {
+        startActivity(new Intent(this,TwoListRVActivity.class));
+    }
+
 
     static class BookBaseAdapter extends RecyclerView.Adapter<BookBaseAdapter.ViewHolder>{
         private List<String> mData;

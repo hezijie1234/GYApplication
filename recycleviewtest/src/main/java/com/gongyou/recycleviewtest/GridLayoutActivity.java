@@ -32,7 +32,7 @@ public class GridLayoutActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.recycle_view);
         srLayout = findViewById(R.id.sl);
         //false 表示正序排列，true表示倒叙显示
-        recyclerView.setLayoutManager(new GridLayoutManager(this,4, OrientationHelper.VERTICAL,false));
+        recyclerView.setLayoutManager(new GridLayoutManager(this,2, OrientationHelper.VERTICAL,false));
         bookBaseAdapter = new GridLayoutActivity.BookBaseAdapter(getData());
         recyclerView.setAdapter(bookBaseAdapter);
 //        recyclerView.addItemDecoration(new MyDividerItemDecoration(this,LinearLayoutManager.VERTICAL));

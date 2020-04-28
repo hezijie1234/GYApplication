@@ -3,9 +3,13 @@ package com.gongyou.flashlight;
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
 import android.support.test.runner.AndroidJUnit4;
+import android.util.Log;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
+
+import java.math.BigDecimal;
+import java.text.DecimalFormat;
 
 import static org.junit.Assert.*;
 
@@ -22,5 +26,14 @@ public class ExampleInstrumentedTest {
         Context appContext = InstrumentationRegistry.getTargetContext();
 
         assertEquals("com.gongyou.flashlight", appContext.getPackageName());
+    }
+
+    @Test
+    public void sum(){
+        float f = 3.011f;
+        BigDecimal b = new BigDecimal(f);
+        double d = b.setScale(1, BigDecimal.ROUND_CEILING).doubleValue();
+        System.out.print("结果" + d);
+        Log.e("111", "sum: " + "结果" + d  );
     }
 }

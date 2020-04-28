@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.gongyou.recycleviewtest">
-    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name="com.gongyou.MyApp"
         android:allowBackup="true"
@@ -10,6 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".TwoListRVActivity"></activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -17,11 +20,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".GridLayoutActivity" />
+        <activity
+            android:name=".GridLayoutActivity"
+            android:screenOrientation="portrait" />
         <activity android:name="com.gongyou.rvadapterhelp.AnimationUseActivity" />
         <activity android:name="com.gongyou.rvadapterhelp.MultiItemActivity" />
         <activity android:name=".LinearLayoutActivity" />
-        <activity android:name=".StaggeredGridActivity"></activity>
+        <activity android:name=".StaggeredGridActivity" />
     </application>
 
 </manifest>
